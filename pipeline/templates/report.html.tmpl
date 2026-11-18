@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GTA VI launch-day productivity audit</title>
+<style>
+$css
+</style>
+</head>
+<body>
+<section class="page page-report">
+  <div class="kicker">Independent audit · GTA VI launch day</div>
+  <div class="title">The launch-day productivity claim, checked against its own math</div>
+  <div class="block">$claim_block</div>
+  <div class="block">$range_block</div>
+  <div class="block">$superbowl_block</div>
+  <div class="block"><div class="k">Hard anchors</div>$anchors_block</div>
+  <div class="block cant">
+    <div class="k">What we can’t measure</div>
+    <p>Actual sick calls (official absence data lags by about a month), actual delivery orders (private data), and actual lost output (this is a model, by construction). Most one-day absence output is deferred, not destroyed.</p>
+  </div>
+  <div class="foot"><div class="sources">Sources: $sources_small</div><div class="lock">$lock_line</div></div>
+</section>
+
+<section class="page page-table">
+  <div class="kicker">Model table</div>
+  <div class="title">Every input, its value, kind and source</div>
+  <div class="block">$inputs_table</div>
+  <div class="k">Case grid: absences × output per worker-day</div>
+  <div class="block">$grid</div>
+  $context_block
+  <div class="foot"><div class="lock">$lock_line</div></div>
+</section>
+
+<section class="page page-method">
+  <div class="kicker">Methodology</div>
+  <div class="title">Formulas as written, locked before launch</div>
+  <div class="block">$formulas</div>
+  $precedent_block
+  <div class="block">
+    <div class="k">Method lock</div>
+    <p>The model configuration and formula code were hashed and locked before launch-day data existed. Any later change to either breaks the hash and stops the build.</p>
+    <p class="hash">$lock_hash_full</p>
+  </div>
+  <div class="block">
+    <div class="k">Limits</div>
+    <ul>
+      <li>Absences are triangulated from platform data and surveys, never directly counted.</li>
+      <li>Survey intent overstates behavior; the high case is labeled as such.</li>
+      <li>Output per worker-day is an average; the dollar figures are a model, not a measurement.</li>
+      <li>Figures labeled proxy are directional evidence only.</li>
+    </ul>
+  </div>
+  <div class="foot"><div class="lock">$lock_line</div></div>
+</section>
+</body>
+</html>

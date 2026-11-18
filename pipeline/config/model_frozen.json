@@ -1,0 +1,85 @@
+{
+  "name": "GTA VI launch-day productivity audit",
+  "method_note": "Every input is a dataset id from data/figures.csv. The only numbers written here are labeled conventions and the claim-reproduction check value.",
+  "conventions": {
+    "working_days_per_year": {
+      "value": 250,
+      "label": "assumption: standard full-time year"
+    },
+    "claim_reproduction_tolerance_pct": {
+      "value": 1,
+      "label": "assumption: rounding tolerance for the claim's approximate (~) inputs"
+    }
+  },
+  "claim_audit": {
+    "inputs": {
+      "headline_usd": "claim_headline_usd",
+      "workers": "claim_workers",
+      "output_per_day": "claim_output_per_day"
+    },
+    "expected_reproduction_usd": 420000000,
+    "formula": "claim_workers x claim_output_per_day",
+    "attribution": "Jose Garcia-Montalvo (Pompeu Fabra University), as cited in the claim's source rows"
+  },
+  "output_per_worker_day": {
+    "base": {
+      "inputs": {"avg_annual_output": "avg_annual_output_per_worker"},
+      "formula": "avg_annual_output_per_worker / working_days_per_year",
+      "basis": "matches the claim's own inputs, so the audit is apples-to-apples"
+    },
+    "sensitivity": {
+      "inputs": {"gdp": "us_gdp_usd", "employed": "us_employed"},
+      "formula": "us_gdp_usd / us_employed / working_days_per_year",
+      "basis": "GDP per employed person per working day; sensitivity case only"
+    }
+  },
+  "absence_cases": {
+    "low": {
+      "inputs": {
+        "employed": "us_employed",
+        "baseline_rate": "baseline_daily_absence_rate",
+        "lift": "bamboohr_pto_lift_nov19"
+      },
+      "formula": "us_employed x baseline_daily_absence_rate x bamboohr_pto_lift_nov19",
+      "basis": "measured PTO-request increase above a normal Thursday (BambooHR platform), applied as a lift on the normal daily absence rate; the lift is never treated as an absence rate"
+    },
+    "high": {
+      "inputs": {
+        "population": "ft_employed_gamers",
+        "skip_rate": "gamesquare_skip_rate"
+      },
+      "formula": "ft_employed_gamers x gamesquare_skip_rate",
+      "basis": "survey intent of full-time-employed gamers (GameSquare); overstates by nature"
+    }
+  },
+  "costs": {
+    "formula": "absences[case] x output_per_worker_day[rate]",
+    "cases": ["low", "high"],
+    "rates": ["base", "sensitivity"]
+  },
+  "benchmarks": {
+    "superbowl": {
+      "inputs": {"absences": "superbowl_monday_absences_2025"},
+      "dollar_equivalent_rate": "base",
+      "sanity_cap": "high-case absences must be below Super Bowl Monday absences"
+    },
+    "precedent_gtav_2013": {
+      "row": "gtav_2013_precedent",
+      "required_kind": "precedent",
+      "render_only_if_sourced": true,
+      "wording": "no dent was reported in contemporary coverage",
+      "framing": "precedent, not a measurement"
+    }
+  },
+  "context": {
+    "survey_intent": ["bamboohr_salaried_plan_off", "bamboohr_genz_plan_off", "gamesquare_considering_off", "bamboohr_pto_lift_nov20"],
+    "survey_intent_note": "survey-intent context only; never a model case"
+  },
+  "anchors": {
+    "optional": ["preorders_units", "preorders_usd", "twitch_peak_nov19", "ttwo_close_nov19", "kalshi_album_streams_forecast"]
+  },
+  "proxies": {
+    "optional": ["trends_doordash_nov19", "trends_doordash_oct29", "trends_doordash_nov5", "trends_doordash_nov12"]
+  },
+  "required_for_render": ["claim_audit", "absence_cases", "output_per_worker_day.base", "benchmarks.superbowl"]
+}

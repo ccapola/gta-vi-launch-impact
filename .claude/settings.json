@@ -1,0 +1,1 @@
+{"permissions":{"allow":["Read","Write","Edit","Glob","Grep","Bash(python3:*)","Bash(mkdir:*)","Bash(cp:*)","Bash(ls:*)","Bash(cat:*)","Bash(head:*)","Bash(tail:*)","Bash(git status:*)","Bash(git diff:*)","Bash(git log:*)","Bash(git add:*)","Bash(git commit:*)","Bash(git init:*)","Bash(~/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome:*)"]}}

@@ -1,0 +1,16 @@
+id,label,value,unit,kind,snapshot,as_of,source_name,source_url,evidence_file,evidence_quote,notes
+claim_headline_usd,Viral claim (fixture),$1B,usd,claim,reference,2026-11-01,Fixture press,https://example.com/claim,evidence.md,cost the US $1B in lost productivity,fixture
+claim_workers,Claim workers (fixture),1.5M,count,claim,reference,2026-11-01,Fixture press,https://example.com/claim,evidence.md,1.5M workers at $280 per day,fixture
+claim_output_per_day,Claim output per day (fixture),$280,usd_per_day,claim,reference,2026-11-01,Fixture press,https://example.com/claim,evidence.md,1.5M workers at $280 per day,fixture
+avg_annual_output_per_worker,Average annual output per worker (fixture),$70K,usd,estimate,reference,2026-01-01,Fixture stats,https://example.com/stats,evidence.md,average annual output per worker of $70K,fixture
+us_gdp_usd,US GDP (fixture),$30T,usd,measured,reference,2026-01-01,Fixture stats,https://example.com/stats,evidence.md,US GDP of $30T,fixture
+us_employed,US employed (fixture),160M,count,measured,reference,2026-10-01,Fixture stats,https://example.com/stats,evidence.md,160M employed,fixture
+baseline_daily_absence_rate,Normal daily absence rate (fixture),3%,pct,measured,reference,2026-10-01,Fixture stats,https://example.com/stats,evidence.md,normal daily absence rate of 3%,fixture
+bamboohr_pto_lift_nov19,PTO request lift (fixture),13%,pct,measured,baseline,2026-10-19,Fixture platform,https://example.com/platform,evidence.md,PTO requests for launch day are 13% higher,fixture
+bamboohr_salaried_plan_off,Salaried workers planning the day off (fixture),18%,pct,survey,baseline,2026-10-20,Fixture survey,no URL: survey press release,evidence.md,18% of salaried workers plan to take the day off,fixture
+ft_employed_gamers,Full-time employed gamers (fixture),20M,count,estimate,reference,2026-10-01,Fixture survey,https://example.com/survey,evidence.md,20M full-time employed gamers,fixture
+gamesquare_skip_rate,Planned to skip work (fixture),10%,pct,survey,baseline,2026-10-20,Fixture survey,https://example.com/survey,evidence.md,10% plan to skip work,fixture
+superbowl_monday_absences_2025,Super Bowl Monday absences (fixture),22.6M,count,benchmark,reference,2025-02-10,Fixture benchmark,https://example.com/sb,evidence.md,22.6M planned Super Bowl Monday absences,fixture
+preorders_units,Preorders units (fixture),9.69M,count,estimate,baseline,2026-11-10,Fixture tracker,https://example.com/pre,evidence.md,preorders of 9.69M units,fixture
+preorders_usd,Preorders value (fixture),$942M,usd,estimate,baseline,2026-11-10,Fixture tracker,https://example.com/pre,evidence.md,worth $942M,fixture
+trends_doordash_nov12,DoorDash search index (fixture),3,index,proxy,baseline,2026-11-12,Fixture trends,https://example.com/trends,evidence.md,DoorDash search index of 3,fixture
